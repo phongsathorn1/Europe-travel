@@ -1,53 +1,108 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Europe Travel</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Athiti|Kanit|Prompt" rel="stylesheet">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Europe Travel</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/font.css" rel="stylesheet">
+        <script src="js/main.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
-    <script src="js/main.js"></script>
 </head>
 <body>
     <div class="page-wrapper">
         <header class="main-header">
             <div class="container">
                 <div class="brand" style="font-size: 35px;font-family: 'nunito';font-weight: 600">
-                    Tea Time Travel
+                        Tea Time Travel
+                    </div>
                 </div>
-            </div>
-            <div class="header-menu">
-                <div class="container">
-                    <ul class="main-menu">
-                        <li><a href="javascript:void(0)">หน้าแรก</a></li>
-                        <li><a href="javascript:void(0)">ประเทศในทวีปยุโรป</a></li>
-                        <li><a href="javascript:void(0)">เกี่ยวกับเรา</a></li>
-                    </ul>
-                </div>
-            </div>
-        </header>
-
-        <div class="hero-wrapper">
-            <div class="container clearfix">
-                <div class="hero-intro">
-                    <h1>Lorem ipsum dolor</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi minima commodi molestiae rem delectus pariatur tempora eius ab consequatur minus quam, debitis distinctio dicta nulla eum veniam odio facilis beatae.</p>
-                </div>
-                <div class="hero-image" style="background-image: url('images/ancient-arches-architecture-896762.jpg')">
-                    <div class="hero-image-picker">
-                        <ul class="hero-image-slider">
-                            <li><div class="hero-image-slider-item"></div></li>
-                            <li><div class="hero-image-slider-item"></div></li>
-                            <li><div class="hero-image-slider-item"></div></li>
+                <div class="header-menu">
+                    <div class="container">
+                        <ul class="main-menu">
+                            <li><a href="javascript:void(0)">หน้าแรก</a></li>
+                            <li><a href="javascript:void(0)">ประเทศในทวีปยุโรป</a></li>
+                            <li><a href="javascript:void(0)">เกี่ยวกับเรา</a></li>
                         </ul>
                     </div>
                 </div>
+            </header>
+            
+            <div class="hero-wrapper">
+                <div class="hero-image-container">
+                    <div class="hero-image">
+                        <div class="hero-image-bg" style="background-image: url('images/ancient-arches-architecture-896762.jpg')"></div>
+                        <div class="hero-image-picker">
+                            <div class="hero-image-controller clearfix">
+                                <a class="hero-button" id="heroprevious" href="javascript:void(0)"> &lt;previous </a>
+                                <a class="hero-button" id="heronext" href="javascript:void(0)"> next </a>
+                            </div>
+                            <ul class="hero-image-slider">
+                                <li>
+                                    <div class="hero-image-slider-item">
+                                        <img src="images/ancient-arches-architecture-896762.jpg" alt="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="hero-image-slider-item">
+                                        <img src="images/altare-della-patria-architecture-building-56886.jpg" alt="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="hero-image-slider-item">
+                                        <img src="images/architecture-boat-boats-161850.jpg" alt="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="hero-image-slider-item">
+                                        <img src="images/architecture-bridge-buildings-61381.jpg" alt="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="hero-image-slider-item">
+                                        <img src="images/architecture-building-city-672143.jpg" alt="">
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="hero-image-slider-item">
+                                        <img src="images/bridge-city-clouds-575362.jpg" alt="">
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="container clearfix">
+                        <div class="hero-intro">
+                            <h1>ออกสำรวจทวีปยุโรป</h1>
+                            <p>พริตตี้เย้ว รีโมต อิมพีเรียล แซนด์วิชมาร์เก็ตติ้งคอนโทรลอันตรกิริยา โอเปร่าสคริปต์ควีน ไบเบิล เยนคอร์รัปชันไอติมอ่วมเครป ริคเตอร์บลูเบอร์รี่น้องใหม่ บอยคอตต์จิ๊กโก๋ซาฟารีเปปเปอร์มินต์โคโยตี เทวาออร์แกนิกทัวริสต์ตรวจสอบฮิปโป สเตชั่นโคโยตีสจ๊วตวีเจ เบอร์เกอร์ คอนโดมิเนียมเคสเอเซีย คำสาปชัตเตอร์แคมปัสเวิร์คแซ็กโซโฟน ไฮไลต์ไมค์ ฟีดแอสเตอร์คณาญาติคอมเมนต์เห่ย</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-
-        <div class="main-wrapper">
-        </div>
+            
+            <div class="main-wrapper">
+                <section class="main-section">
+                    <div class="container">
+                        <h1>Test</h1>
+                        <div class="image-slider-container">
+                            <ul class="image-slider">
+                                <li><div class="image-slider-item"></div></li>
+                                <li><div class="image-slider-item"></div></li>
+                                <li><div class="image-slider-item"></div></li>
+                                <li><div class="image-slider-item"></div></li>
+                                <li><div class="image-slider-item"></div></li>
+                                <li><div class="image-slider-item"></div></li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            
+            <footer class="main-footer">
+                <div class="container">
+                    Test Footer
+            </div>
+        </footer>
     </div>
 </body>
 </html>
