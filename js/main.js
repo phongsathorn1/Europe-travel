@@ -4,7 +4,10 @@ var cloneSlide;
 var heroSlide = {
     height: 0,
     width: 0,
-    capacity: 0
+    capacity: 0,
+    autoplay: true,
+    autoplayTimer: null,
+    autoplayPause: false
 }
 var heroPos_x = 0;
 var currentItem;
@@ -41,13 +44,12 @@ function heroSliderControl(direction){
         heroPos_x += heroItem.width;
         heroItem.current--;
     }
-    
-    console.log(heroItem.current);
 
+    pauseAutoplay();
     moveSlide(heroPos_x, true);
     let heroImgSlider = document.getElementsByClassName("hero-image-slider")[0]
     
-    document.getElementsByClassName("hero-image-bg")[0].style.transition = "opacity "+effectDelay+"ms ease-out 0s";
+    document.getElementsByClassName("hero-image-bg")[0].style.transition = "opacity "+effectDelay+"ms ease 0s";
     document.getElementsByClassName("hero-image-bg")[0].style.opacity = 0;
 
     setTimeout(function(){
@@ -68,13 +70,27 @@ function moveSlide(pos_x, effect){
     }, effectDelay);
 }
 
-window.addEventListener('load', function(){
-    cloneSlide = document.getElementsByClassName("hero-image-slider")[0].cloneNode(true);
+function setAutoplay(enable, interval){
+    if(enable){
+        heroSlide.autoplayTimer = setInterval(function(){
+            if(!heroSlide.autoplayPause){
+                heroSliderControl(1)
+            }
+        }, interval);
+    }
+    else{
+        heroSlide.autoplayTimer = null;
+    }
+}
 
-    document.getElementById("heroprevious").addEventListener("click", () => {heroSliderControl(0)}, false);
-    document.getElementById("heronext").addEventListener("click", () => {heroSliderControl(1)}, false);
-    console.log("Success loaded");
-    
+function pauseAutoplay(){
+    heroSlide.autoplayPause = true;
+    setTimeout(function(){
+        heroSlide.autoplayPause = false;
+    }, 3000);
+}
+
+function heroSlideSetup(){
     let heroImageSlide = document.getElementsByClassName("hero-image-slider")[0];
     
     heroImageSlide.children[0].className = "current-hero-item";
@@ -97,5 +113,15 @@ window.addEventListener('load', function(){
     heroItem.count += heroSlide.capacity * 2;
     heroItem.current += heroSlide.capacity;
     moveSlide(heroPos_x);
+}
 
+window.addEventListener('load', function(){
+    cloneSlide = document.getElementsByClassName("hero-image-slider")[0].cloneNode(true);
+
+    document.getElementById("heroprevious").addEventListener("click", () => {heroSliderControl(0)}, false);
+    document.getElementById("heronext").addEventListener("click", () => {heroSliderControl(1)}, false);
+    console.log("Success loaded");
+
+    heroSlideSetup();
+    setAutoplay(true, 3000);
 });
