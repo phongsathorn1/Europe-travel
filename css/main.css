@@ -131,13 +131,13 @@ body{
 }
 
 .hero-image-slider-item{
-    background: red;
-    border-radius: 10px;
+    border-radius: 5px;
     height: 130px;
     width: 200px;
     margin: 10px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
     overflow: hidden;
+    /* border: 5px solid transparent; */
 }
 
 .hero-image-slider-item img{
@@ -150,6 +150,10 @@ body{
     background: #ffffff;
     display: block;
     float: left;
+}
+
+.current-hero-item .hero-image-slider-item{
+    /* border: 5px solid #FFFFFF; */
 }
 
 .main-section{
