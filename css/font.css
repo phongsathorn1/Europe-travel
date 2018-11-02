@@ -4,7 +4,7 @@
     font-style: normal;
     font-weight: 400;
     src: local('Athiti'), local('Athiti-Regular'), url(/fonts/Athiti.woff2) format('truetype');
-    unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC;
+    /* unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC; */
 }
 
 @font-face {
@@ -12,5 +12,21 @@
     font-style: normal;
     font-weight: 400;
     src: local('Kanit Regular'), local('Kanit-Regular'), url(/fonts/Kanit.woff2) format('woff2');
+    unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC;
+}
+
+@font-face {
+    font-family: 'Pridi';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Pridi Regular'), local('Pridi-Regular'), url(/fonts/Pridi.woff2) format('woff2');
+    unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC;
+}
+
+@font-face {
+    font-family: 'Bai Jamjuree';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Bai Jamjuree Regular'), local('BaiJamjuree-Regular'), url(/fonts/Bai\ Jamjuree.woff2) format('woff2');
     unicode-range: U+0E01-0E5B, U+200C-200D, U+25CC;
 }

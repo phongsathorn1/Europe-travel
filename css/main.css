@@ -193,12 +193,71 @@ body{
 }
 
 /* article */
-.article-hero-image{
-    height: 200px;
+.article-hero-image {
+    height: 450px;
     overflow: hidden;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -99;
 }
+
 .article-hero-image img{
     width: 100%;
     height: auto;
-    transform: translate(-50%, 0%);
+    transform: translate(0%, -40%);
+}
+
+.city-wrapper{
+    position: relative;
+    top: 350px;
+    min-height: 500px;
+    margin-bottom: 80px;
+}
+
+.city-wrapper .card{
+    background: #ffffff;
+    border-radius: 3px;
+    padding: 50px;
+    box-shadow: 0px 0px 18px 1px rgba(0, 0, 0, 0.5);
+}
+
+.city-wrapper h1{
+    margin: 0px;
+}
+
+.city-wrapper .subtitle{
+    margin: 0px;
+    color: #3e7081;
+    letter-spacing: 4px;
+}
+
+.city-wrapper p{
+    text-indent: 3.1em;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 17px;
+    line-height: 1.8em;
+    padding: 0px 60px;
+}
+
+.city-wrapper .flag-icon{
+    height: 23px;
+    width: 23px;
+    position: relative;
+    top: 5px;
+    margin-right: 10px;
+}
+
+.city-wrapper .city-content img{
+    display: block;
+    margin: 30px auto;
+    width: 850px;
+}
+
+.city-wrapper .city-content .city-title{
+    font-size: 35px;
+    padding: 10px;
+    color: #3e7081;
+    font-family: 'Athiti', sans-serif;
+    font-weight: bold;
 }
