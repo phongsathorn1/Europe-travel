@@ -187,3 +187,14 @@ body{
     background: #F2F2F2;
     padding: 10px 0px;
 }
+
+/* article */
+.article-hero-image{
+    height: 200px;
+    overflow: hidden;
+}
+.article-hero-image img{
+    width: 100%;
+    height: auto;
+    transform: translate(-50%, 0%);
+}
