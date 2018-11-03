@@ -93,7 +93,6 @@ body{
     margin-bottom: 150px;
     position: relative;
     height: 560px;
-    /* z-index: -9; */
 }
 
 .hero-wrapper .container{
@@ -130,14 +129,48 @@ body{
     left: -50px;
 }
 
-.hero-image-slider-item{
+.hero-image-slider-item,
+.image-slider-item{
     border-radius: 5px;
     height: 130px;
     width: 200px;
     margin: 10px;
     box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
     overflow: hidden;
-    /* border: 5px solid transparent; */
+}
+
+.image-slider-item-text{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.45);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    color: #ffffff;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.8);
+}
+
+.image-slider-item-text span{
+    display: block;
+}
+
+.image-slider-item-text .title{
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.image-slider-item-text .flag-icon{
+    width: 40px !important;
+    height: 40px;
+    margin: 10px;
+    border: 3px solid #f6f6f6;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .hero-image-slider-item img{
@@ -146,10 +179,43 @@ body{
 }
 
 .hero-button{
-    padding: 10px;
-    background: #ffffff;
+    padding: 15px;
+    background: #3e7081;
     display: block;
     float: left;
+    text-indent: -10em;
+    width: 15px;
+    height: 15px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin: 0px 5px;
+    box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.6);
+}
+
+#heroprevious::after{
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: -29px;
+    background-image: url('/assets/icons/back.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    left: -2px;
+}
+
+#heronext::after{
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+    top: -29px;
+    background-image: url('/assets/icons/next.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    right: -2px;
 }
 
 .current-hero-item .hero-image-slider-item{
@@ -240,7 +306,8 @@ body{
     padding: 0px 60px;
 }
 
-.city-wrapper .flag-icon{
+.city-wrapper .flag-icon,
+.travel-list .flag-icon{
     height: 23px;
     width: 23px;
     position: relative;
@@ -260,4 +327,11 @@ body{
     color: #3e7081;
     font-family: 'Athiti', sans-serif;
     font-weight: bold;
+}
+
+.travel-list{
+    min-height: 500px;
+    background: #3A3A3A;
+    padding: 20px 30px;
+    color: #ffffff;
 }
