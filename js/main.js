@@ -1,3 +1,12 @@
+/* Util functions */
+function baseUrl(){
+    return window.location.origin;
+}
+
+function getUrl(pathname){
+    return baseUrl() +"/"+ pathname;
+}
+
 /* hero image slider */
 
 var heroImageSlide;
@@ -79,7 +88,7 @@ function moveSlide(pos_x, effect){
     }, effectDelay);
 }
 
-function setAutoplay(enable, interval){
+function HeroSetAutoplay(enable, interval){
     if(enable){
         heroSlide.autoplayTimer = setInterval(function(){
             if(!heroSlide.autoplayPause){
@@ -124,6 +133,9 @@ function heroSlideSetup(){
     moveSlide(heroPos_x);
 }
 
+/* Country list slider */
+
+
 window.addEventListener('load', function(){
     cloneSlide = document.getElementsByClassName("hero-image-slider")[0].cloneNode(true);
 
@@ -132,5 +144,5 @@ window.addEventListener('load', function(){
     console.log("Success loaded");
 
     heroSlideSetup();
-    setAutoplay(true, 3000);
+    HeroSetAutoplay(true, 3000);
 });

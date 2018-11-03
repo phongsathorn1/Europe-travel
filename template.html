@@ -8,6 +8,69 @@
     <link href="css/font.css" rel="stylesheet">
     <script src="js/main.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script>
+        function getParameters(){
+            var parameter_dict = {};
+            var parameter = window.location.search.substr(1)
+            
+            if(parameter.length == 0){
+                return parameter_dict;
+            }
+
+            parameter.split("&").forEach(function(item){
+                let temp = item.split("=");
+                parameter_dict[temp[0]] = temp[1]
+            });
+            console.log(parameter_dict);
+            return parameter_dict;
+        }
+        
+        var data;
+        function loadContent(){
+            var parameter = getParameters();
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    data = JSON.parse(this.responseText);
+                    initContent(data);
+                }else if(this.readyState == 4 && this.status == 404){
+                    notFound();
+                    return false;
+                }
+            };
+            var url = getUrl("content/"+parameter["country"]+"/"+parameter["location"]+".json");
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+        }
+
+        function notFound(){
+            alert("404 Not found");
+        }
+
+        function initContent(data){
+            /* hero image */
+            console.log(data);
+            var heroImage = document.getElementById("heroImage");
+            heroImage.src = data["hero_image"];
+
+            /* location name */
+            var locationElm = document.getElementById("location");
+            locationElm.innerText = data["location"]["th"] + "(" + data["location"]["en"] + ")";
+
+            /* country */
+            var flagIcon = document.getElementById("flag-icon");
+            var country = document.getElementById("country");
+            country.innerText = data["country"]["th"];
+            flagIcon.src = "assets/countrys/" + data["country"]["en"].toLowerCase() + ".svg";
+
+            /* content */
+            var contentElm = document.getElementById("city-content");
+            contentElm.innerHTML = data["data"];
+        }
+
+        window.addEventListener('load', loadContent);
+        // loadContent();
+    </script>
 </head>
 <body>
     <div class="page-wrapper">
@@ -20,7 +83,7 @@
                 <div class="header-menu">
                     <div class="container">
                         <ul class="main-menu">
-                            <li><a href="javascript:void(0)">หน้าแรก</a></li>
+                            <li><a href="index.html">หน้าแรก</a></li>
                             <li><a href="javascript:void(0)">ประเทศในทวีปยุโรป</a></li>
                             <li><a href="javascript:void(0)">เกี่ยวกับเรา</a></li>
                         </ul>
@@ -28,21 +91,21 @@
                 </div>
         </header>
             <div class="article-hero-image">
-                <img src="images/greece/acropolis-ancient-antique-772686.jpg">
+                <img id="heroImage" src="">
             </div>
     
             <div class="city-wrapper">
                 <div class="container">
                     <div class="card">
                         <div class="title">
-                            <h1>กรุงเอเธนส์ (Athens)</h1>
-                            <h3 class="subtitle"><img src="assets/countrys/greece.svg" class="flag-icon">ประเทศกรีก</h3>
+                            <h1 id="location"></h1>
+                            <h3 class="subtitle">
+                                <img src="" id="flag-icon" class="flag-icon">
+                                <span id="country"></span>
+                            </h3>
                         </div>
-                        <div class="city-content">
-                            <img src="makenew/img/g1.jpg">
-                            <p><span class="city-title">กรุงเอเธนส์ (Athens)</span> เป็นอีกหนึ่งเมืองที่เก่าแก่ที่สุดของโลก มีประวัติมายาวนานหลายพันปี เป็นแหล่งกำเนิดและจุดเริ่มต้นของอารยธรรมตะวันตก และเป็นต้นกำเนิดของประชาธิปไตย โดยตั้งชื่อเมืองตามอาธีนา เทพเจ้าที่ชาวกรีกนับถือ ตั้งแต่สร้างเสร็จใหม่ๆ เมืองนี้ยังไม่มีชื่อและเทพเจ้าประจำเมืองที่จะคอยคุ้มครองปกป้องและเป็นที่พึ่งทางใจให้กับชาวเมือง เหล่าเทพและเทพีจึงมาแข่งขันกันเพื่อชิงตำแหน่งเทพเจ้าประจำเมืองกันมากมายค่ะ สุดท้ายก็เหลือเพียง 2 องค์คือ เทพเจ้าโพไซดอน (Poseidon) เทพแห่งมหาสมุทร และ เทพีอะธีน่า (Athena) เทพีแห่งปัญญา และได้ให้เทพเจ้าซุส (Zeus) ผู้เป็นราชาของเทพเจ้าทั้งหมดมาตัดสิน โดยให้เนรมิตของ 1 อย่างแก่ชาวเมือง และให้ชาวเมืองเลือกกันเองว่าจะให้ใครเป็นเทพเจ้าประจำเมือง</p>
-                            <img src="makenew/img/a2.jpg">
-                            <p>เทพเจ้าโพไซดอนจึงสร้างม้าขึ้นมา ชาวเมืองก็พากันชื่นชมกันยกใหญ่ ส่วนเทพีอะธีน่าได้เนรมิตต้นมะกอกขึ้นมา ซึ่งเป็นต้นไม้ที่สามารถใช้ประโยชน์ได้ทุกส่วน และยังเป็นสัญลักษณ์ของสันติภาพ ในขณะที่ม้าดูเหมือนจะเป็นสัญลักษณ์ของสงครามซะมากกว่า ชาวเมืองจึงพร้อมใจกันยกให้เทพีเป็นผู้ชนะและตกลงใช้ชื่อเมืองว่า เอเธนส์ ตามชื่อของเทพีอะธีน่านั่นเองค่า และมะกอกก็กลายเป็นผลไม้เศรษฐกิจสำคัญอันดับหนึ่งของกรีซมาจนถึงปัจจุบัน ต่อมาได้สร้างมหาวิหารขึ้นเพื่อบูชาเทพีเอธีน่า คือ วิหารพาเธนอน สถานที่ท่องเที่ยวที่มีชื่อเสียงที่สุดของกรีซ อยู่ที่อะโครโปลิส (The Acropolis) ป้อมปราการที่อยู่บนเทือกเขาสูง ตั้งอยู่บนหินที่โผล่ขึ้นมาเหนือเมืองเอเธนส์ และได้สร้างรูปปั้นเอธีน่าไว้ภายในมหาวิหาร</p>
+                        <div class="city-content" id="city-content">
+                            
                         </div>
                     </div>
                 </div>
