@@ -66,15 +66,19 @@
             /* content */
             var contentElm = document.getElementById("city-content");
             contentElm.innerHTML = data["data"];
+
+            if(data["header_overlay"]){
+                var header = document.getElementsByClassName("main-header")[0];
+                header.classList.add("overlay");
+            }
         }
 
         window.addEventListener('load', loadContent);
-        // loadContent();
     </script>
 </head>
 <body>
     <div class="page-wrapper">
-        <header class="main-header overlay">
+        <header class="main-header">
             <div class="container">
                 <div class="brand" style="font-size: 35px;font-family: 'nunito';font-weight: 600">
                         Tea Time Travel
@@ -92,6 +96,7 @@
         </header>
             <div class="article-hero-image">
                 <img id="heroImage" src="">
+                <div class="hero-overlay"></div>
             </div>
     
             <div class="city-wrapper">
@@ -104,6 +109,11 @@
                                 <span id="country"></span>
                             </h3>
                         </div>
+                        <div class="social">
+                            <a href="javascript:void(0)" class="twitter-icon icon">Twitter</a>
+                            <a href="javascript:void(0)" class="facebook-icon icon">Facebook</a>
+                        </div>
+                        <div class="clearfix"></div>
                         <div class="city-content" id="city-content">
                             
                         </div>

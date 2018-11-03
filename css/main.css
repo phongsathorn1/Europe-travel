@@ -56,6 +56,7 @@ body{
     line-height: 50px;
     display: block;
     position: relative;
+    font-weight: 900;
 }
 
 .container{
@@ -371,4 +372,45 @@ body{
     position: relative;
     left: 80px;
     bottom: -3px;
+}
+
+.hero-overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    top: 0;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.05) 33%, rgba(255,255,255,0) 38%, rgba(255,255,255,0) 100%);
+}
+
+.social{
+    float: right;
+    position: relative;
+    top: 15px;
+}
+
+.title{
+    float: left;
+}
+
+.social .icon{
+    display: inline-block;
+    height: 25px;
+    width: 25px;
+    background-size: contain;
+    text-indent: -10em;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    margin: 8px 3px;
+    position: relative;
+}
+
+.facebook-icon {
+    background: url('/assets/icons/facebook.svg');
+}
+
+.twitter-icon{
+    background: url('/assets/icons/twitter.svg');
+    top: 1px;
 }
