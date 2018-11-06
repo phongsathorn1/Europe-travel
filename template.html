@@ -38,7 +38,7 @@
                     return false;
                 }
             };
-            var url = getUrl("content/"+parameter["country"]+"/"+parameter["location"]+".json");
+            var url = "content/"+parameter["country"]+"/"+parameter["location"]+".json";
             xmlhttp.open("GET", url, true);
             xmlhttp.send();
         }
