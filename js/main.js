@@ -134,7 +134,7 @@ function heroSlideSetup(){
     heroItem.count += heroSlide.capacity * 2;
     heroItem.current += heroSlide.capacity + 1;
     moveSlide(heroPos_x);
-    
+
     let bgImageUrl = heroImageSlide.children[heroItem.current].children[0].children[0].src;
     document.getElementsByClassName("hero-image-bg")[0].style.backgroundImage = "url("+bgImageUrl+")"
     document.getElementsByClassName("hero-image-bg")[0].style.opacity = 100;
@@ -148,5 +148,5 @@ function heroSlideInit(){
     console.log("Success loaded");
 
     heroSlideSetup();
-    // HeroSetAutoplay(true, 3000);
+    HeroSetAutoplay(true, 3000);
 }
