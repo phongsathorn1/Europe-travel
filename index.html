@@ -6,15 +6,45 @@
     <title>Europe Travel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="css/font.css" rel="stylesheet">
-    <script src="js/main.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Sriracha" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+    <script>
+        function loadHeroImg(){
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    data = JSON.parse(this.responseText);
+                    console.log(data["images"]);
+                    data["images"].forEach(element => {
+                        let heroSlide = document.getElementById("hero-slide");
+                        let heroSlideItem = document.createElement("div");
+                        let heroSlideItemImg = document.createElement("img");
+                        let heroLi = document.createElement("li");
+                        heroSlideItem.className = "hero-image-slider-item";
+                        heroSlideItemImg.src = element.url;
+                        heroSlideItem.appendChild(heroSlideItemImg);
+                        heroLi.appendChild(heroSlideItem);
+                        heroSlide.appendChild(heroLi);
+                    });
+                }
+            };
+            var url = "content/hero.json";
+            xmlhttp.open("GET", url, false);
+            xmlhttp.send();
+        }
+        window.addEventListener('load', function(){
+            loadHeroImg();
+            heroSlideInit();
+        });
+    </script>
+    <script src="js/main.js"></script>
 </head>
 <body>
     <div class="page-wrapper">
         <header class="main-header">
             <div class="container">
                 <div class="brand" style="font-size: 35px;font-family: 'nunito';font-weight: 600">
-                        Tea Time Travel
+                        ท่องเที่ยวยุโรป
                     </div>
                 </div>
                 <div class="header-menu">
@@ -31,44 +61,13 @@
             <div class="hero-wrapper">
                 <div class="hero-image-container">
                     <div class="hero-image">
-                        <div class="hero-image-bg" style="background-image: url('images/ancient-arches-architecture-896762.jpg')"></div>
+                        <div class="hero-image-bg"></div>
                         <div class="hero-image-picker">
                             <div class="hero-image-controller clearfix">
                                 <a class="hero-button" id="heroprevious" href="javascript:void(0)"> &lt;previous </a>
                                 <a class="hero-button" id="heronext" href="javascript:void(0)"> next </a>
                             </div>
-                            <ul class="hero-image-slider">
-                                <li>
-                                    <div class="hero-image-slider-item">
-                                        <img src="images/ancient-arches-architecture-896762.jpg" alt="">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="hero-image-slider-item">
-                                        <img src="images/altare-della-patria-architecture-building-56886.jpg" alt="">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="hero-image-slider-item">
-                                        <img src="images/architecture-boat-boats-161850.jpg" alt="">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="hero-image-slider-item">
-                                        <img src="images/architecture-bridge-buildings-61381.jpg" alt="">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="hero-image-slider-item">
-                                        <img src="images/architecture-building-city-672143.jpg" alt="">
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="hero-image-slider-item">
-                                        <img src="images/bridge-city-clouds-575362.jpg" alt="">
-                                    </div>
-                                </li>
-                            </ul>
+                            <ul class="hero-image-slider" id="hero-slide"></ul>
                         </div>
                     </div>
                     <div class="container clearfix">
