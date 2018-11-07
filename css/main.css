@@ -272,16 +272,11 @@ h1{
     width: 100%;
 }
 
-.main-footer{
-    background: #F2F2F2;
-    padding: 10px 0px;
-}
-
 /* article */
 .article-hero-image {
     height: 450px;
     overflow: hidden;
-    position: absolute;
+    position: relative;
     top: 0px;
     left: 0px;
     z-index: -99;
@@ -295,9 +290,9 @@ h1{
 
 .city-wrapper{
     position: relative;
-    top: 350px;
+    top: -150px;
     min-height: 500px;
-    margin-bottom: 80px;
+    margin-bottom: -100px;
 }
 
 .city-wrapper .card{
@@ -318,7 +313,7 @@ h1{
 }
 
 .city-wrapper p{
-    text-indent: 3.1em;
+    text-indent: 3.4em;
     font-family: 'Bai Jamjuree', sans-serif;
     font-size: 19px;
     line-height: 1.8em;
@@ -342,8 +337,7 @@ h1{
 }
 
 .city-wrapper .city-content .city-title{
-    font-size: 35px;
-    padding: 10px;
+    font-size: 28px;
     color: #3e7081;
     font-family: 'Athiti', sans-serif;
     font-weight: bold;
@@ -428,4 +422,11 @@ h1{
 .twitter-icon{
     background: url('/assets/icons/twitter.svg');
     top: 1px;
+}
+
+.main-footer{
+    min-height: 150px;
+    background: #F2F2F2;
+    /* margin-top: 400px; */
+    padding: 10px 0px;
 }

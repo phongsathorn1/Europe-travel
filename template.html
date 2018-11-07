@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Europe Travel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Sriracha" rel="stylesheet">
     <link href="css/font.css" rel="stylesheet">
     <script src="js/main.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
@@ -71,6 +72,13 @@
                 var header = document.getElementsByClassName("main-header")[0];
                 header.classList.add("overlay");
             }
+
+            let fbShare = document.getElementById("fbshare");
+            let twShare = document.getElementById("twshare");
+
+            fbShare.href = "https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(window.location.href);
+            let tweetText = encodeURI(data["location"]["th"]+"("+data["location"]["en"]+")\n")+encodeURIComponent(window.location.href);
+            twShare.href = "https://twitter.com/intent/tweet?text="+tweetText;
         }
 
         window.addEventListener('load', loadContent);
@@ -110,8 +118,8 @@
                             </h3>
                         </div>
                         <div class="social">
-                            <a href="javascript:void(0)" class="twitter-icon icon">Twitter</a>
-                            <a href="javascript:void(0)" class="facebook-icon icon">Facebook</a>
+                            <a href="javascript:void(0)" id="twshare" target="_blank" class="twitter-icon icon">Twitter</a>
+                            <a href="javascript:void(0)" id="fbshare" target="_blank" class="facebook-icon icon">Facebook</a>
                         </div>
                         <div class="clearfix"></div>
 
@@ -121,7 +129,8 @@
                     </div>
                 </div>
             </div>
-        <footer>
+        <footer class="main-footer">
+            <div class="container"></div>
         </footer>
     </div>
 </body>
