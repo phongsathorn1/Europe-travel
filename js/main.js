@@ -120,23 +120,27 @@ function heroSlideSetup(){
 
     heroSlide.capacity = Math.floor(heroImageSlide.offsetWidth / heroItem.width)
 
-    for(let i = 0; i < heroSlide.capacity * 2; i++){
-        let tempElm = cloneSlide.childNodes[(heroItem.count * 2) - i].cloneNode(true);
+    for(let i = 0; i <= heroSlide.capacity; i++){
+        console.log((heroItem.count - (i + 1)));
+        // console.log(cloneSlide.childNodes[(heroItem.count - i)]);
+        let tempElm = cloneSlide.childNodes[(heroItem.count - (i + 1))].cloneNode(true);
         let tempElm2 = cloneSlide.childNodes[i].cloneNode(true);
         heroImageSlide.insertBefore(tempElm, heroImageSlide.childNodes[0]);
         heroImageSlide.appendChild(tempElm2);
     }
 
-    heroPos_x += -(heroSlide.capacity * heroItem.width);
+    heroPos_x += -((heroSlide.capacity + 1) * heroItem.width);
+    console.log(heroPos_x);
     heroItem.count += heroSlide.capacity * 2;
-    heroItem.current += heroSlide.capacity;
+    heroItem.current += heroSlide.capacity + 1;
     moveSlide(heroPos_x);
+    
+    let bgImageUrl = heroImageSlide.children[heroItem.current].children[0].children[0].src;
+    document.getElementsByClassName("hero-image-bg")[0].style.backgroundImage = "url("+bgImageUrl+")"
+    document.getElementsByClassName("hero-image-bg")[0].style.opacity = 100;
 }
 
-/* Country list slider */
-
-
-window.addEventListener('load', function(){
+function heroSlideInit(){
     cloneSlide = document.getElementsByClassName("hero-image-slider")[0].cloneNode(true);
 
     document.getElementById("heroprevious").addEventListener("click", () => {heroSliderControl(0)}, false);
@@ -144,5 +148,5 @@ window.addEventListener('load', function(){
     console.log("Success loaded");
 
     heroSlideSetup();
-    HeroSetAutoplay(true, 3000);
-});
+    // HeroSetAutoplay(true, 3000);
+}
