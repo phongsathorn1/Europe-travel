@@ -3,10 +3,15 @@ body{
     margin: 0px;
     min-width: 1200px;
     background: #ffffff;
-    /* font-family: 'Kanit', sans-serif; */
-    font-family: 'Athiti', sans-serif;
-    font-size: 18px;
+    font-family: 'Kanit', sans-serif;
+    /* font-family: 'Athiti', sans-serif; */
+    font-size: 19px;
     overflow-x: hidden;
+    color: #2b2b2b;
+}
+
+h1{
+    font-weight: 300;
 }
 
 .main-header{
@@ -73,6 +78,11 @@ body{
     display:block;
 }
 
+.hero-intro h1{
+    color: #3e7081;
+    font-family: 'Sriracha', cursive;
+}
+
 .hero-image-container{
     position: relative;
     height: 100%;
@@ -106,6 +116,9 @@ body{
     width: 30%;
     float: left;
     top: 20%;
+    font-family: 'Bai Jamjuree', sans-serif;
+    line-height: 1.6em;
+    letter-spacing: 0.3px;
 }
 
 .hero-image{
@@ -200,7 +213,7 @@ body{
     height: 100%;
     width: 100%;
     position: relative;
-    top: -29px;
+    top: -25px;
     background-image: url('/assets/icons/back.svg');
     background-size: contain;
     background-repeat: no-repeat;
@@ -213,7 +226,7 @@ body{
     height: 100%;
     width: 100%;
     position: relative;
-    top: -29px;
+    top: -25px;
     background-image: url('/assets/icons/next.svg');
     background-size: contain;
     background-repeat: no-repeat;
@@ -307,9 +320,10 @@ body{
 .city-wrapper p{
     text-indent: 3.1em;
     font-family: 'Bai Jamjuree', sans-serif;
-    font-size: 17px;
+    font-size: 19px;
     line-height: 1.8em;
     padding: 0px 60px;
+    color: #181818;
 }
 
 .city-wrapper .flag-icon,
