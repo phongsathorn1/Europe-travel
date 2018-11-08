@@ -79,6 +79,9 @@
             fbShare.href = "https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(window.location.href);
             let tweetText = encodeURI(data["location"]["th"]+"("+data["location"]["en"]+")\n")+encodeURIComponent(window.location.href);
             twShare.href = "https://twitter.com/intent/tweet?text="+tweetText;
+
+            let mapElm = document.getElementById("location-map");
+            mapElm.src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBpz6mUyhGUycaKXlmBgvcG8OGRLfuaihc&q="+data["location"]["en"]+"+"+data["country"]["en"]
         }
 
         window.addEventListener('load', loadContent);
@@ -118,6 +121,7 @@
                             </h3>
                         </div>
                         <div class="social">
+                            <a href="#map" class="btn btn-classic">แผนที่</a>
                             <span class="share-label">แชร์</span>
                             <a href="javascript:void(0)" id="twshare" target="_blank" class="twitter-icon icon">Twitter</a>
                             <a href="javascript:void(0)" id="fbshare" target="_blank" class="facebook-icon icon">Facebook</a>
@@ -126,6 +130,17 @@
 
                         <div class="city-content" id="city-content">
                             
+                        </div>
+
+                        <div class="location-map" id="map">
+                            <h2>แผนที่แสดงที่ตั้ง</h2>
+                            <iframe
+                                width="600"
+                                height="450"
+                                id="location-map"
+                                frameborder="0" style="border:0"
+                                src="" allowfullscreen>
+                            </iframe>
                         </div>
                     </div>
                 </div>
