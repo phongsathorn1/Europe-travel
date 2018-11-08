@@ -49,8 +49,8 @@
         }
 
         function initContent(data){
+            document.title = data["location"]["th"]+" "+data["country"]["th"]+" - ท่องเที่ยวยุโรป";
             /* hero image */
-            console.log(data);
             var heroImage = document.getElementById("heroImage");
             heroImage.src = data["hero_image"];
 
@@ -77,7 +77,7 @@
             let twShare = document.getElementById("twshare");
 
             fbShare.href = "https://www.facebook.com/sharer/sharer.php?u="+encodeURIComponent(window.location.href);
-            let tweetText = encodeURI(data["location"]["th"]+"("+data["location"]["en"]+")\n")+encodeURIComponent(window.location.href);
+            let tweetText = encodeURI(data["location"]["th"]+"("+data["location"]["en"]+") "+data["country"]["th"]+"\n")+encodeURIComponent(window.location.href);
             twShare.href = "https://twitter.com/intent/tweet?text="+tweetText;
 
             let mapElm = document.getElementById("location-map");
