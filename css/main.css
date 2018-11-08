@@ -48,13 +48,15 @@ a{
     color: #ffffff;
     margin: 0px;
     display: table;
-    padding: 0px;
+    padding: 0px 10px;
+    border-radius: 20px;
     float: right;
+    background: rgba(85, 180, 192, 0.7);
 }
 
 .main-menu li{
     float: left;
-    letter-spacing: 0.02em;    
+    /* letter-spacing: 0.02em; */
     position: relative;
     line-height: 1.6em;
 }
@@ -62,14 +64,14 @@ a{
 .main-menu li a{
     color: #ffffff;
     font-weight: 600;
-    letter-spacing: 1px;
+    /* letter-spacing: 1px; */
     text-decoration: none;
     margin: 0 10px;
     line-height: 50px;
     display: block;
     position: relative;
-    font-weight: 900;
-    font-size: 19px;
+    font-weight: 300;
+    font-size: 18px;
 }
 
 .container{
@@ -131,7 +133,7 @@ a{
     position: absolute;
     right: 0;
     top: 0;
-    width: 60%;
+    width: 58%;
     height: 100%;
 }
 
@@ -331,7 +333,7 @@ a{
 }
 
 .city-wrapper .flag-icon,
-.travel-list .flag-icon{
+.location-list .flag-icon{
     height: 23px;
     width: 23px;
     position: relative;
@@ -406,6 +408,8 @@ a{
     float: right;
     position: relative;
     top: 15px;
+    margin: 8px 0px;
+    vertical-align: middle;
 }
 
 .title{
@@ -420,8 +424,9 @@ a{
     text-indent: -10em;
     overflow: hidden;
     background-repeat: no-repeat;
-    margin: 8px 3px;
+    margin: 0px 3px;
     position: relative;
+    top: 6px;
 }
 
 .facebook-icon {
@@ -430,7 +435,7 @@ a{
 
 .twitter-icon{
     background: url('../assets/icons/twitter.svg');
-    top: 1px;
+    top: 6px;
 }
 
 .main-footer{
@@ -439,7 +444,6 @@ a{
 }
 
 .main-footer .container{
-    border-top: 1px solid #CCC;
     padding-top: 30px;
     padding-bottom: 10px;
     display: flex;
@@ -461,6 +465,10 @@ a{
     height: 55px;
 }
 
+.overlay .brand .brand-img{
+    background-image: url('../assets/brand-w.svg');
+}
+
 .hero-wrapper .background,
 .about-wrapper .background{
     height: 200px;
@@ -479,10 +487,25 @@ a{
 .hero-wrapper .background .bg1,
 .about-wrapper .background .bg1{
     height: 100%;
+    width: 550px;
     background-image: url('../assets/bg1.png');
     background-size: contain;
     background-repeat: no-repeat;
     margin-left: 65px;
+    position: relative;
+    float: left;
+}
+
+.about-wrapper .background .bg4{
+    background-image: url('../assets/bg4.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 120px;
+    width: 500px;
+    position: relative;
+    top: 25px;
+    left: 100px;
+    float: left;
 }
 
 .location-wrapper{
@@ -510,18 +533,32 @@ a{
 }
 
 /* about us */
-.main-wrapper.about-wrapper{
+.about-wrapper .main-wrapper{
     /* padding: 50px 0px; */
     padding-top: 100px;
     /* margin-bottom: 50px; */
 }
+
+.profile-pic-border {
+    padding: 10px;
+    border: 3px dashed #3e7081;
+    height: 200px;
+    width: 200px;
+    margin: auto;
+    border-radius: 50%;
+}
+
 .profile-pic{
     border-radius: 50%;
     height: 200px;
     width: 200px;
     overflow: hidden;
-    margin: 10px auto;
+    margin: auto;
     margin-bottom: 30px;
+    border: 4px solid #41a3b9;
+    position: relative;
+    top: -4px;
+    left: -4px;
 }
 
 .profile-pic img{
@@ -534,8 +571,53 @@ a{
 
 .member-container .card{
     width: 500px;
-    border: 1px solid #ccc;
+    border: 1px solid #55b4c0;
     text-align: center;
     padding: 20px;
     margin: 10px 20px;
+}
+
+.member-container .card .detail{
+    margin: 20px 0px;
+    font-size: 18px;
+}
+
+.member-container .card .detail b{
+    color: #2a5766;
+    font-size: 20px;
+    text-decoration: underline;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+.btn{
+    padding: 10px 20px;
+    background: #3e7081;
+    border-radius: 10px;
+    color: #FFFFFF;
+    box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.35);
+}
+
+.share-label{
+    background: #3e7081;
+    color: #FFF;
+    padding: 5px 10px;
+    margin:0px 10px;
+    border-radius: 3px;
+    position: relative;
+}
+
+.share-label:after {
+	left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(62, 112, 129, 0);
+	border-left-color: #3e7081;
+	border-width: 6px;
+	margin-top: -6px;
 }
