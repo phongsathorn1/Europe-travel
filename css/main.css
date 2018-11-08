@@ -215,7 +215,7 @@ h1{
     width: 100%;
     position: relative;
     top: -25px;
-    background-image: url('/assets/icons/back.svg');
+    background-image: url('../assets/icons/back.svg');
     background-size: contain;
     background-repeat: no-repeat;
     left: -2px;
@@ -228,7 +228,7 @@ h1{
     width: 100%;
     position: relative;
     top: -25px;
-    background-image: url('/assets/icons/next.svg');
+    background-image: url('../assets/icons/next.svg');
     background-size: contain;
     background-repeat: no-repeat;
     right: -2px;
@@ -417,11 +417,11 @@ h1{
 }
 
 .facebook-icon {
-    background: url('/assets/icons/facebook.svg');
+    background: url('../assets/icons/facebook.svg');
 }
 
 .twitter-icon{
-    background: url('/assets/icons/twitter.svg');
+    background: url('../assets/icons/twitter.svg');
     top: 1px;
 }
 
