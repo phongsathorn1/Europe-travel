@@ -638,4 +638,14 @@ a{
     background: #FFFFFF;
     color: #3e7081;
     font-size: 16px;
+    transition: all 0.25s;
+}
+
+.contact-bar .btn:hover{
+    background: #3e7081;
+    color: #ffffff;
+}
+
+.about-wrapper h1{
+    text-align: center;
 }
