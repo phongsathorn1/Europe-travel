@@ -518,10 +518,10 @@ a{
 }
 
 .location-wrapper{
-    height: 500px;
     background-image: url(../assets/bg3.svg);
     background-repeat: no-repeat;
     background-position: right;
+    background-size: 500px;
 }
 
 .location-list li a{
