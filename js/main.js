@@ -121,8 +121,6 @@ function heroSlideSetup(){
     heroSlide.capacity = Math.floor(heroImageSlide.offsetWidth / heroItem.width)
 
     for(let i = 0; i <= heroSlide.capacity; i++){
-        console.log((heroItem.count - (i + 1)));
-        // console.log(cloneSlide.childNodes[(heroItem.count - i)]);
         let tempElm = cloneSlide.childNodes[(heroItem.count - (i + 1))].cloneNode(true);
         let tempElm2 = cloneSlide.childNodes[i].cloneNode(true);
         heroImageSlide.insertBefore(tempElm, heroImageSlide.childNodes[0]);
@@ -130,7 +128,6 @@ function heroSlideSetup(){
     }
 
     heroPos_x += -((heroSlide.capacity + 1) * heroItem.width);
-    console.log(heroPos_x);
     heroItem.count += heroSlide.capacity * 2;
     heroItem.current += heroSlide.capacity + 1;
     moveSlide(heroPos_x);
