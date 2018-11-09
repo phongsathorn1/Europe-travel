@@ -5,14 +5,14 @@ you can visit https://phongsathron.github.io/Europe-travel/
 ## Preview screen
 - Homepage
 
-![Homepage](images/preview\ (1).png)
+![Homepage](images/preview/preview%20(1).png)
 
-![Homepage](images/preview\ (2).png)
+![Homepage](images/preview/preview%20(2).png)
 
 - Content page
 
-![Content page](image/preview\ (3).png)
+![Content page](images/preview/preview%20(3).png)
 
 - About us
 
-![About us](image/preview\ (4).png)
+![About us](images/preview/preview%20(4).png)
