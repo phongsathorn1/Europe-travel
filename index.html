@@ -27,6 +27,28 @@
                         heroLi.appendChild(heroSlideItem);
                         heroSlide.appendChild(heroLi);
                     });
+
+                    data["locations"].forEach(element => {
+                        // <li><a href="template.html?country=greece&location=athens"><img src="assets/countrys/greece.svg" id="flag-icon" class="flag-icon">กรุงเอเธนส์ (กรีก)</a></li>
+                        let locationLi = document.createElement("li");
+                        let locationLink = document.createElement("a");
+                        let locationFlag = document.createElement("img");
+
+                        locationFlag.className = "flag-icon";
+                        locationFlag.id = "flag-icon";
+                        locationFlag.src = "assets/countrys/"+element["country"]["en"].toLowerCase()+".svg";
+                        
+                        locationLink.href = "template.html?country="+element["country"]["en"]+"&location="+element["location"]["en"];
+                        
+                        locationLink.appendChild(locationFlag);
+                        locationLink.innerHTML += element["location"]["th"]+" ("+element["country"]["th"]+")";
+                        
+                        locationLi.appendChild(locationLink);
+                        
+
+                        let locationUl = document.getElementById("location-list");
+                        locationUl.appendChild(locationLi);
+                    });
                 }
             };
             var url = "content/hero.json";
@@ -53,7 +75,7 @@
                         <ul class="main-menu">
                             <li><a href="index.html">หน้าแรก</a></li>
                             <li><a href="index.html#locations">สถานที่ท่องเที่ยว</a></li>
-                            <li><a href="about.html">เกี่ยวกับเรา</a></li>
+                            <li><a href="about.html">ผู้จัดทำ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -89,17 +111,7 @@
                         <div class="card">
                             <h1>สถานที่ท่องเที่ยวในทวีปยุโรป</h1>
                             <div class="location-wrapper">
-                                <ul class="location-list">
-                                    <li><a href="template.html?country=greece&location=athens"><img src="assets/countrys/greece.svg" id="flag-icon" class="flag-icon">กรุงเอเธนส์ (กรีก)</a></li>
-                                    <li><a href="javascript:void(0)">Test</a></li>
-                                    <li><a href="javascript:void(0)">Test</a></li>
-                                    <li><a href="javascript:void(0)">Test</a></li>
-                                    <li><a href="javascript:void(0)">Test</a></li>
-                                    <li><a href="javascript:void(0)">Test</a></li>
-                                    <li><a href="javascript:void(0)">Test</a></li>
-                                    <li><a href="javascript:void(0)">Test</a></li>
-                                    <li><a href="javascript:void(0)">Test</a></li>
-                                    <li><a href="javascript:void(0)">Test</a></li>
+                                <ul class="location-list" id="location-list">
                                 </ul>
                             </div>
                         </div>
@@ -113,7 +125,7 @@
                         <a href="index.html"><div class="brand-img">ท่องเที่ยวยุโรป</div></a>
                     </div>
                     <div class="right-column">
-                        <a href="about.html">เกี่ยวกับเรา</a>
+                        <a href="about.html">ผู้จัดทำ</a>
                     </div>
                 </div>
             </footer>
