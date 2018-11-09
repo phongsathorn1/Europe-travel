@@ -82,7 +82,7 @@
             twShare.href = "https://twitter.com/intent/tweet?text="+tweetText;
 
             let mapElm = document.getElementById("location-map");
-            mapElm.src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBpz6mUyhGUycaKXlmBgvcG8OGRLfuaihc&q="+data["location"]["en"]+"+"+data["country"]["en"]
+            mapElm.src = "https://www.google.com/maps/embed/v1/place?key=AIzaSyBpz6mUyhGUycaKXlmBgvcG8OGRLfuaihc&q="+data["location"]["en"];
         }
 
         window.addEventListener('load', loadContent);
