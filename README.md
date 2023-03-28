@@ -1,7 +1,7 @@
 # Europe Travel - ท่องเที่ยวยุโรป
 The website for giving information to the traveler who want to travel Europe. This website build with Thai language. 
 
-you can visit https://workshop.phongsathorn.me/Europe-travel/
+you can visit https://github.phongsathorn.me/Europe-travel
 ## Preview screen
 - Homepage
 
